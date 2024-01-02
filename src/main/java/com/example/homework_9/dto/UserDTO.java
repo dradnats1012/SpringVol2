@@ -10,7 +10,6 @@ public class UserDTO {
         this.password = password;
     }
 
-
     public String getUserID() {
         return userID;
     }
