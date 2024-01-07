@@ -44,7 +44,7 @@ public class User {
         return password;
     }
 
-    public UserRole getRole(){
+    public UserRole getRole() {
         return role;
     }
 

@@ -24,7 +24,7 @@ public class UserService {
         회원가입 기능 구현 시 사용
         중복되면 true
      */
-    public boolean checkUserIdDuplicate(String userid){
+    public boolean checkUserIdDuplicate(String userid) {
         return userRepositoryLogin.existsByUserid(userid);
     }
 
@@ -33,11 +33,11 @@ public class UserService {
         회원가입 기능 구현 시 사용
         중복되면 true
      */
-    public boolean checkNameDuplicate(String name){
+    public boolean checkNameDuplicate(String name) {
         return userRepositoryLogin.existsByName(name);
     }
 
-    public void join(JoinRequest request){
+    public void join(JoinRequest request) {
         userRepositoryLogin.save(request.toEntity(encoder.encode(request.getPassword())));
     }
 
@@ -46,29 +46,29 @@ public class UserService {
         화면에서 LoginRequest(LoginId, password)을 입력받아 일치하면 User return
 
      */
-    public User login(LoginRequest request){
+    public User login(LoginRequest request) {
         Optional<User> optionalUser = userRepositoryLogin.findByUserid(request.getUserId());
 
-        if(optionalUser.isEmpty()){
+        if (optionalUser.isEmpty()) {
             return null;
         }
 
         User user = optionalUser.get();
 
-        if(!user.getPassword().equals(request.getPassword())){
+        if (!user.getPassword().equals(request.getPassword())) {
             return null;
         }
 
         return user;
     }
 
-    public User getLoginUserById(String userid){
-        if(userid == null){
+    public User getLoginUserById(String userid) {
+        if (userid == null) {
             return null;
         }
 
         Optional<User> optionalUser = userRepositoryLogin.findByUserid(userid);
-        if(optionalUser.isEmpty()){
+        if (optionalUser.isEmpty()) {
             return null;
         }
 

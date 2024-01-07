@@ -1,4 +1,5 @@
 package com.example.homework_9.dto;
+
 public class UserDTO {
     private String userid;
     private String name;
@@ -22,11 +23,11 @@ public class UserDTO {
         return password;
     }
 
-    public void setUserID(String userid){
+    public void setUserID(String userid) {
         this.userid = userid;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 

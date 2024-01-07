@@ -5,9 +5,10 @@ import jakarta.validation.constraints.NotBlank;
 
 public class JoinRequest {
 
-    public JoinRequest(){
+    public JoinRequest() {
 
     }
+
     @NotBlank(message = "로그인 아이디가 비어있습니다.")
     private String userid;
 
@@ -17,7 +18,7 @@ public class JoinRequest {
     @NotBlank(message = "비밀번호가 비어있습니다.")
     private String password;
 
-    public User toEntity(String encodedPassword){
+    public User toEntity(String encodedPassword) {
         return User.builder()
                 .userid(this.userid)
                 .password(encodedPassword)
@@ -37,11 +38,11 @@ public class JoinRequest {
         return password;
     }
 
-    public void setUserID(String userid){
+    public void setUserID(String userid) {
         this.userid = userid;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 

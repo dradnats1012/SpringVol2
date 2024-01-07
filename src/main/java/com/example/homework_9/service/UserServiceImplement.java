@@ -1,8 +1,8 @@
 package com.example.homework_9.service;
 
 import com.example.homework_9.domain.users.User;
-import com.example.homework_9.repository.UserRepositoryJPA;
 import com.example.homework_9.dto.UserDTO;
+import com.example.homework_9.repository.UserRepositoryJPA;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

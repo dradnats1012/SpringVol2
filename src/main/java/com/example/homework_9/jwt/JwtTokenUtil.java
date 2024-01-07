@@ -5,12 +5,11 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 import java.util.Date;
-import java.util.List;
 
 public class JwtTokenUtil {
 
     // JWT 토큰 발급
-    public static String createToken(String loginId, String key, long expireTimeMs){
+    public static String createToken(String loginId, String key, long expireTimeMs) {
         Claims claims = Jwts.claims();
         claims.put("loginId", loginId);
 
@@ -23,13 +22,13 @@ public class JwtTokenUtil {
     }
 
     // Claims에서 loginId 꺼내기
-    public static String getUserId(String token, String secretKey){
+    public static String getUserId(String token, String secretKey) {
         return extractClaims(token, secretKey).get("userid").toString();
     }
 
     // 발릅 토큰 만료시간 지났는지 체크
-    public static boolean  isExpired(String token, String secretKey){
-        Date expiredDate = extractClaims(token,secretKey).getExpiration();
+    public static boolean isExpired(String token, String secretKey) {
+        Date expiredDate = extractClaims(token, secretKey).getExpiration();
         return expiredDate.before(new Date());
     }
 
