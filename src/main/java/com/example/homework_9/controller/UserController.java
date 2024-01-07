@@ -24,18 +24,18 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/{userID}")
-    public User getUserByUserID(@PathVariable String userID) {
-        return userService.getUserByUserID(userID);
+    @GetMapping("/{userid}")
+    public User getUserByUserID(@PathVariable String userid) {
+        return userService.getUserByUserID(userid);
     }
 
-    @PutMapping("/{userID}")
-    public void updateUser(@PathVariable String userID, @RequestBody String password) {
-        userService.updateUserPassword(userID, password);
+    @PutMapping("/{userid}")
+    public void updateUser(@PathVariable String userid, @RequestBody String password) {
+        userService.updateUserPassword(userid, password);
     }
 
-    @DeleteMapping("/{userID}")
-    public void deleteUser(@PathVariable String userID) {
-        userService.deleteUser(userID);
+    @DeleteMapping("/{userid}")
+    public void deleteUser(@PathVariable String userid) {
+        userService.deleteUser(userid);
     }
 }

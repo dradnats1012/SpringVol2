@@ -1,17 +1,17 @@
 package com.example.homework_9.dto;
 public class UserDTO {
-    private String userID;
+    private String userid;
     private String name;
     private String password;
 
-    public UserDTO(String userID, String name, String password) {
-        this.userID = userID;
+    public UserDTO(String userid, String name, String password) {
+        this.userid = userid;
         this.name = name;
         this.password = password;
     }
 
     public String getUserID() {
-        return userID;
+        return userid;
     }
 
     public String getName() {
@@ -22,8 +22,8 @@ public class UserDTO {
         return password;
     }
 
-    public void setUserID(String userID){
-        this.userID = userID;
+    public void setUserID(String userid){
+        this.userid = userid;
     }
 
     public void setName(String name){

@@ -1,7 +1,7 @@
 package com.example.homework_9.service;
 
 import com.example.homework_9.domain.users.User;
-import com.example.homework_9.domain.users.UserRepositoryJPA;
+import com.example.homework_9.repository.UserRepositoryJPA;
 import com.example.homework_9.dto.UserDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class UserServiceImplement {
 
     public User insertUser(UserDTO user) {
         return userRepositoryJPA.save(User.builder()
-                .userID(user.getUserID())
+                .userid(user.getUserID())
                 .name(user.getName())
                 .password(user.getPassword())
                 .build());
@@ -28,12 +28,12 @@ public class UserServiceImplement {
         return userRepositoryJPA.findAll();
     }
 
-    public User getUserByUserID(String userID) {
-        return userRepositoryJPA.findById(userID).orElse(null);
+    public User getUserByUserID(String userid) {
+        return userRepositoryJPA.findById(userid).orElse(null);
     }
 
-    public User updateUserPassword(String userID, String password) {
-        User user = userRepositoryJPA.findById(userID).orElse(null);
+    public User updateUserPassword(String userid, String password) {
+        User user = userRepositoryJPA.findById(userid).orElse(null);
         userRepositoryJPA.save(User.builder()
                 .password(password)
                 .build());
@@ -41,7 +41,7 @@ public class UserServiceImplement {
         return user;
     }
 
-    public void deleteUser(String userID) {
-        userRepositoryJPA.delete(User.builder().userID(userID).build());
+    public void deleteUser(String userid) {
+        userRepositoryJPA.delete(User.builder().userid(userid).build());
     }
 }

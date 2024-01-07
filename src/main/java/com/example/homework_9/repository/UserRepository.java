@@ -28,23 +28,23 @@ public class UserRepository {
         return users;
     }
 
-    public UserDTO getUserByUserID(String userID) {
+    public UserDTO getUserByUserID(String userid) {
         return users.stream()
-                .filter(userDTO -> userDTO.getUserID().equals(userID))
+                .filter(userDTO -> userDTO.getUserID().equals(userid))
                 .findAny()
                 .orElse(new UserDTO("", "", ""));
     }
 
-    public void updateUserPassword(String userID, UserDTO user) {
+    public void updateUserPassword(String userid, UserDTO user) {
         users.stream()
-                .filter(userDTO -> userDTO.getUserID().equals(userID))
+                .filter(userDTO -> userDTO.getUserID().equals(userid))
                 .findAny()
                 .orElse(new UserDTO("", "", ""))
                 .setPassword(user.getPassword());
     }
 
-    public void deleteUser(String userID) {
-        users.removeIf(userDTO -> userDTO.getUserID().equals(userID));
+    public void deleteUser(String userid) {
+        users.removeIf(userDTO -> userDTO.getUserID().equals(userid));
     }
 }
 

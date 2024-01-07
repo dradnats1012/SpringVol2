@@ -18,14 +18,16 @@ bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
-!**/ser/main/resources/application.prorperties
+!**/ser/main/resources/application.yml
 .idea
 *.iws
 *.iml
 *.ipr
+*.yml
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+application.yml
 
 ### NetBeans ###
 /nbproject/private/
